@@ -1,0 +1,53 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct marsh
+{
+    string start[100];
+    string finish[100];
+    int number;
+};
+marsh trafic[8];
+
+int main()
+{
+    setlocale(LC_ALL, "Rus");
+
+    for (int i = 1; i < 8; i++)
+    {
+        cout << "Номер маршрута: " << i << "\n";
+        trafic[i].number = i;
+        cout << "Название начального пункта маршрута: ";
+        getline(cin, trafic[i].start);
+        cout << "Название конечного пункта маршрута: ";
+        getline(cin, trafic[i].finish);
+        system("cls");
+    }
+
+    system("cls");
+    bool isFind(false);
+    int numbermarsh, i;
+    
+        cout << endl;
+        cout << "\n\nВведите номер маршрута: ";
+        cin >> numbermarsh;
+        if (trafic[i].number == numbermarsh)
+        {
+            cout << "Данные по маршруту: " << endl;
+            cout << "Номер маршрута: " << trafic[i].number << endl;
+            cout << "Название начального пункта маршрута: " << trafic[i].start << endl;
+            cout << "Название конечного пункта маршрута: " << trafic[i].finish << endl;
+            isFind = true;
+
+        }
+    
+    if (!isFind)
+    {
+        cout << "Нет таких маршрутов! ";
+    }
+
+    delete[]trafic;
+    system("pause");
+    return 0;
+}
